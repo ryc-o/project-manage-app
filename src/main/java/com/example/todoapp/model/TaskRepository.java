@@ -10,11 +10,13 @@ import java.util.Optional;
 public interface TaskRepository {
     List<Task> findAll();
 
-    Optional<Task> findById(Integer id);
-
-    Task save(Task entity);
-
     Page<Task> findAll(Pageable page);
 
+    Optional<Task> findById(Integer id);
+
+    boolean existsById(Integer id);
+
     List<Task> findByDone(@Param("state") boolean done);
+
+    Task save(Task entity);
 }
