@@ -1,4 +1,0 @@
-spring:
- main:
-   banner-mode: console
-task.template.allowMultipleTasks: false
