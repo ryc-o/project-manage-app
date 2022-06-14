@@ -4,7 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
 @Entity
-@Table(name = "task")
+@Table(name = "TASKS")
 public class Task{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
