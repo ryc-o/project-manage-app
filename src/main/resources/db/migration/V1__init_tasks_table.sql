@@ -1,6 +1,6 @@
-drop table if exists tasks;
-create table tasks(
-    id int primary key auto_increment,
-    description varchar(100) not null,
-    done bit
+DROP TABLE IF EXISTS TASKS;
+CREATE TABLE TASKS(
+    ID INT PRIMARY KEY AUTO_INCREMENT,
+    DESCRIPTION VARCHAR(100) NOT NULL,
+    DONE BIT
 )
