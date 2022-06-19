@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "TASKS")
-public class Task extends BaseAudidableEntity{
+public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int  id;
@@ -14,8 +14,8 @@ public class Task extends BaseAudidableEntity{
     private String description;
     private boolean done;
     private LocalDateTime deadline;
-    private LocalDateTime createdOn;
-    private LocalDateTime updatedOn;
+    @Embedded
+    private Audit audit;
 
     public Task() {
     }
