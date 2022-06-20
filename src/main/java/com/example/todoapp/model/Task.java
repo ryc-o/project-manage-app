@@ -23,6 +23,11 @@ public class Task {
     public Task() {
     }
 
+    public Task(String description, LocalDateTime deadline) {
+        this.description = description;
+        this.deadline = deadline;
+    }
+
     public int getId() {
         return id;
     }
@@ -35,7 +40,7 @@ public class Task {
         return description;
     }
 
-    void setDescription(String description) {
+    public void setDescription(String description) {
         this.description = description;
     }
 
@@ -51,7 +56,7 @@ public class Task {
         return deadline;
     }
 
-    void setDeadline(LocalDateTime deadline) {
+    public void setDeadline(LocalDateTime deadline) {
         this.deadline = deadline;
     }
 
