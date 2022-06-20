@@ -14,8 +14,11 @@ public class TaskGroup {
     @NotBlank(message = "Task group's description most be not null and not empty")
     private String description;
     private boolean done;
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "group")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "group")
     private Set<Task> tasks;
+    @ManyToOne()
+    @JoinColumn(name = "project_id")
+    private Project project;
 
     public TaskGroup() {
     }
