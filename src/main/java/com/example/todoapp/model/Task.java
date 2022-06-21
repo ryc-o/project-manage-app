@@ -1,9 +1,14 @@
 package com.example.todoapp.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.time.LocalDateTime;
 
+@Setter
+@Getter
 @Entity
 @Table(name = "TASKS")
 public class Task {
@@ -28,52 +33,13 @@ public class Task {
         this.deadline = deadline;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
+    public Task(String description, LocalDateTime deadline, TaskGroup group) {
         this.description = description;
-    }
-
-    public boolean isDone() {
-        return done;
-    }
-
-    public void setDone(boolean done) {
-        this.done = done;
-    }
-
-    public LocalDateTime getDeadline() {
-        return deadline;
-    }
-
-    public void setDeadline(LocalDateTime deadline) {
         this.deadline = deadline;
-    }
-
-    public Audit getAudit() {
-        return audit;
-    }
-
-    public void setAudit(Audit audit) {
-        this.audit = audit;
-    }
-
-    public TaskGroup getGroup() {
-        return group;
-    }
-
-    public void setGroup(TaskGroup group) {
         this.group = group;
+        if(group != null){
+            this.group = group;
+        }
     }
 
     public void updateFrom(final Task source){
