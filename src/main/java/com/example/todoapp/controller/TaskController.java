@@ -12,8 +12,6 @@ import javax.transaction.Transactional;
 import javax.validation.Valid;
 import java.net.URI;
 import java.util.List;
-import java.util.Optional;
-
 
 @RestController
 @RequestMapping("/tasks")
@@ -73,7 +71,7 @@ class TaskController {
 
     @Transactional
     @PatchMapping("/{id}")
-    public ResponseEntity<?> toglle(@PathVariable int id) {
+    public ResponseEntity<?> toggleTask(@PathVariable int id) {
         if (!repository.existsById(id)) {
             return ResponseEntity.notFound().build();
         }
