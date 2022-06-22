@@ -14,7 +14,7 @@ public class ProjectStep {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int  id;
-    @NotBlank(message = "project step's description most be not null and not empty")
+    @NotBlank(message = "Project step's description most be not null and not empty")
     private String description;
     private int daysToDeadline;
     @ManyToOne()
