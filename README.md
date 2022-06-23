@@ -7,3 +7,4 @@ Web application created to manage projects. Made for Web Application Technologie
   3. Editing project/task group
   4. Deleting project/task group
   5. Handling "toggle" method for group
+  6. Adding notofications to calendar 
