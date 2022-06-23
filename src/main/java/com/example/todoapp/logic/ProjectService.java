@@ -1,7 +1,9 @@
 package com.example.todoapp.logic;
 
 import com.example.todoapp.TaskConfigurationProperties;
-import com.example.todoapp.model.*;
+import com.example.todoapp.model.Project;
+import com.example.todoapp.model.ProjectRepository;
+import com.example.todoapp.model.TaskGroupRepository;
 import com.example.todoapp.model.projection.GroupReadModel;
 import com.example.todoapp.model.projection.GroupTaskWriteModel;
 import com.example.todoapp.model.projection.GroupWriteModel;

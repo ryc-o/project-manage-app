@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
-
 public class ProjectWriteModel {
     @NotBlank(message = "Project's description must not be empty")
     private String description;

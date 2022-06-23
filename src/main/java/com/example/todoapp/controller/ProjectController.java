@@ -1,9 +1,9 @@
 package com.example.todoapp.controller;
 
 import com.example.todoapp.logic.ProjectService;
-import com.example.todoapp.model.projection.ProjectWriteModel;
 import com.example.todoapp.model.Project;
 import com.example.todoapp.model.ProjectStep;
+import com.example.todoapp.model.projection.ProjectWriteModel;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

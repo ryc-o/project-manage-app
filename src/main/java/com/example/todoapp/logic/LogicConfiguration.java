@@ -8,22 +8,22 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class LogicConfiguration {
+class LogicConfiguration {
     @Bean
     ProjectService projectService(
-            ProjectRepository repository,
-            TaskGroupRepository taskGroupRepository,
-            TaskGroupService service,
-            TaskConfigurationProperties config
-    ){
-        return new ProjectService(repository, taskGroupRepository, service, config);
+            final ProjectRepository repository,
+            final TaskGroupRepository taskGroupRepository,
+            final TaskGroupService taskGroupService,
+            final TaskConfigurationProperties config
+    ) {
+        return new ProjectService(repository, taskGroupRepository, taskGroupService, config);
     }
 
     @Bean
     TaskGroupService taskGroupService(
-            TaskGroupRepository repository,
-            TaskRepository taskRepository
-    ){
-        return new TaskGroupService(repository, taskRepository);
+            final TaskGroupRepository taskGroupRepository,
+            final TaskRepository taskRepository
+    ) {
+        return new TaskGroupService(taskGroupRepository, taskRepository);
     }
 }

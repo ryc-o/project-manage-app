@@ -1,21 +1,16 @@
 package com.example.todoapp.model;
 
-import lombok.Getter;
-import lombok.Setter;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.time.LocalDateTime;
 
-@Setter
-@Getter
 @Entity
-@Table(name = "TASKS")
+@Table(name = "tasks")
 public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int  id;
-    @NotBlank(message = "Task's description most be not null and not empty")
+    private int id;
+    @NotBlank(message = "Task's description must not be empty")
     private String description;
     private boolean done;
     private LocalDateTime deadline;
@@ -25,7 +20,7 @@ public class Task {
     @JoinColumn(name = "task_group_id")
     private TaskGroup group;
 
-    public Task() {
+    Task() {
     }
 
     public Task(String description, LocalDateTime deadline) {
@@ -35,16 +30,55 @@ public class Task {
     public Task(String description, LocalDateTime deadline, TaskGroup group) {
         this.description = description;
         this.deadline = deadline;
-        if(group != null){
+        if (group != null) {
             this.group = group;
         }
     }
 
-    public void updateFrom(final Task source){
+    public int getId() {
+        return id;
+    }
+
+    void setId(final int id) {
+        this.id = id;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    void setDescription(final String description) {
+        this.description = description;
+    }
+
+    public boolean isDone() {
+        return done;
+    }
+
+    public void setDone(final boolean done) {
+        this.done = done;
+    }
+
+    public LocalDateTime getDeadline() {
+        return deadline;
+    }
+
+    void setDeadline(final LocalDateTime deadline) {
+        this.deadline = deadline;
+    }
+
+    TaskGroup getGroup() {
+        return group;
+    }
+
+    void setGroup(final TaskGroup group) {
+        this.group = group;
+    }
+
+    public void updateFrom(final Task source) {
         description = source.description;
         done = source.done;
         deadline = source.deadline;
         group = source.group;
     }
-
 }

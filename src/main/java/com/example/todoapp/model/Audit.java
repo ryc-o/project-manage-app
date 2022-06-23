@@ -7,7 +7,7 @@ import javax.persistence.PreUpdate;
 import java.time.LocalDateTime;
 
 @Embeddable
-public class Audit {
+class Audit {
     private LocalDateTime createdOn;
     private LocalDateTime updatedOn;
 
@@ -17,7 +17,7 @@ public class Audit {
     }
 
     @PreUpdate
-    void preUpdate() {
+    void preMerge() {
         updatedOn = LocalDateTime.now();
     }
 }

@@ -9,15 +9,15 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 @Component
-public class LoggerFilter implements Filter {
-    private static Logger logger = LoggerFactory.getLogger(LoggerFilter.class);
+class LoggerFilter implements Filter {
+    private static final Logger logger = LoggerFactory.getLogger(LoggerFilter.class);
 
     @Override
-    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-//        if(request instanceof HttpServletRequest){
-//            var httpRequest = (HttpServletRequest) request;
-//            logger.info("[dofilter] " + httpRequest.getMethod() + " " + httpRequest.getRequestURI());
-//        }
+    public void doFilter(final ServletRequest request, final ServletResponse response, final FilterChain chain) throws IOException, ServletException {
+        if (request instanceof HttpServletRequest) {
+            var httpRequest = (HttpServletRequest) request;
+            logger.info("[doFilter] " + httpRequest.getMethod() + " " + httpRequest.getRequestURI());
+        }
         chain.doFilter(request, response);
     }
 }
