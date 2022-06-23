@@ -1,7 +1,7 @@
 # project-manage-app
 Web application created to manage projects. Made for Web Application Technologies.
 
-# TODO:
+## TODO:
   1. Deleting completed tasks 
   2. Sorting tasks by deadline (in all tabs)
   3. Editing project/task group
