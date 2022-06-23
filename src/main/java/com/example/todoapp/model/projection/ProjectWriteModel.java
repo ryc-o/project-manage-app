@@ -1,4 +1,4 @@
-package com.example.todoapp.logic;
+package com.example.todoapp.model.projection;
 
 import com.example.todoapp.model.Project;
 import com.example.todoapp.model.ProjectStep;
@@ -11,10 +11,10 @@ import java.util.List;
 
 
 public class ProjectWriteModel {
-    @NotBlank(message = "Project's description most be not null and not empty")
+    @NotBlank(message = "Project's description must not be empty")
     private String description;
     @Valid
-    private List<ProjectStep>  steps = new ArrayList<>();
+    private List<ProjectStep> steps = new ArrayList<>();
 
     public ProjectWriteModel() {
         steps.add(new ProjectStep());
@@ -24,7 +24,7 @@ public class ProjectWriteModel {
         return description;
     }
 
-    public void setDescription(String description) {
+    public void setDescription(final String description) {
         this.description = description;
     }
 
@@ -32,7 +32,7 @@ public class ProjectWriteModel {
         return steps;
     }
 
-    public void setSteps(List<ProjectStep> steps) {
+    public void setSteps(final List<ProjectStep> steps) {
         this.steps = steps;
     }
 

@@ -14,10 +14,10 @@ public class LoggerFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-        if(request instanceof HttpServletRequest){
-            var httpRequest = (HttpServletRequest) request;
-            logger.info("[dofilter] " + httpRequest.getMethod() + " " + httpRequest.getRequestURI());
-        }
+//        if(request instanceof HttpServletRequest){
+//            var httpRequest = (HttpServletRequest) request;
+//            logger.info("[dofilter] " + httpRequest.getMethod() + " " + httpRequest.getRequestURI());
+//        }
         chain.doFilter(request, response);
     }
 }

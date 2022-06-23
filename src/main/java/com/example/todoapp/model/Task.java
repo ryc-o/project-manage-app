@@ -21,7 +21,7 @@ public class Task {
     private LocalDateTime deadline;
     @Embedded
     private Audit audit = new Audit();
-    @ManyToOne(cascade = CascadeType.REMOVE)
+    @ManyToOne
     @JoinColumn(name = "task_group_id")
     private TaskGroup group;
 
@@ -29,14 +29,12 @@ public class Task {
     }
 
     public Task(String description, LocalDateTime deadline) {
-        this.description = description;
-        this.deadline = deadline;
+        this(description, deadline, null);
     }
 
     public Task(String description, LocalDateTime deadline, TaskGroup group) {
         this.description = description;
         this.deadline = deadline;
-        this.group = group;
         if(group != null){
             this.group = group;
         }

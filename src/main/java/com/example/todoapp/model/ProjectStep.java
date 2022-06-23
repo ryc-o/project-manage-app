@@ -20,8 +20,4 @@ public class ProjectStep {
     @ManyToOne()
     @JoinColumn(name = "project_id")
     private Project project;
-
-    public void setProject(Project project) {
-        this.project = project;
-    }
 }

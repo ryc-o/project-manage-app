@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo App: groups</title>
-    <link rel="stylesheet" href="https://igoradamenko.github.io/awsm.css/css/awsm.min.css">
+    <link rel="stylesheet" href="https://igoradamenko.github.io/awsm.css/css/awsm_theme_mischka.min.css">
     <style>
         .Bd {
             border: solid 1px black;
@@ -32,10 +32,15 @@
     </style>
 </head>
 <body>
+<header>
+    <nav>
+        <ul>
+            <a href="/">Powrót do strony głównej</a>
+        </ul>
+    </nav>
+</header>
 <main>
-    <!--/*@thymesVar id="message" type="java.lang.String"*/-->
     <h1 th:if="${message != null}" th:text="${message}"></h1>
-    <!--/*@thymesVar id="groups" type="java.util.List<io.github.mat3e.model.projection.GroupReadModel>"*/-->
     <dl th:each="group : ${groups}" class="Bd P(10px)">
         <dt>
             <label>
@@ -58,9 +63,8 @@
     </dl>
     <fieldset>
         <legend>Nowa grupa</legend>
-        <!--/*@thymesVar id="group" type="io.github.mat3e.model.projection.GroupWriteModel"*/-->
         <form action="#" method="post" th:action="@{/groups}" th:object="${group}">
-            <p class="C(red)" th:if="${#fields.hasAnyErrors()}" th:errors="*{all}"></p>
+            <p th:if="${#fields.hasAnyErrors()}"></p>
             <label>Opis
                 <input type="text" th:field="*{description}" th:errorclass="'Bdc(red)'" />
             </label>
